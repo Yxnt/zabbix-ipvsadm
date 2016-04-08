@@ -1,6 +1,6 @@
 zabbix-ipvsadm
 ====
-由 (zabbix_ipvsadm)[https://github.com/shinonome/zabbix_ipvsadm] 修改而来
+由 [zabbix_ipvsadm](https://github.com/shinonome/zabbix_ipvsadm) 修改而来
 
 Usage
 ----
@@ -22,6 +22,6 @@ zabbix_get -s IPADDRESS -k ipvsadm.discovery
 
 修改说明：
 ----
-由于 (zabbix_ipvsadm)[https://github.com/shinonome/zabbix_ipvsadm]中的ipvsadm_discover.sh脚本获取的格式并非JSON无法被Zabbix所解析，所以进行修改以便zabbix可以正常获取数据
+由于 [zabbix_ipvsadm](https://github.com/shinonome/zabbix_ipvsadm)中的ipvsadm_discover.sh脚本获取的格式并非JSON无法被Zabbix所解析，所以进行修改以便zabbix可以正常获取数据
 
 ![](ipvsadm.png)
