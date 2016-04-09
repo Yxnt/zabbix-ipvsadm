@@ -15,12 +15,11 @@ for LINE in `sudo /sbin/ipvsadm -Ln` ;do
 		CUR_TYPE=${TYPE}
 		CUR_IP_INFO=${IP_INFO}
 		SVC_FLG=0
-        elif [ "${END_FLG}" = "28" ];then
+	elif [ "${END_FLG}" = "$(($r_line-1))" ];then
 		echo -n "{ \"{#VTYPE}\" : \"${CUR_TYPE}\", \"{#VIPINFO}\" : \"${CUR_IP_INFO}\", \"{#RIPINFO}\" : \"${IP_INFO}\" }"
 	elif [ "${TYPE}" = "->" -a ${SVC_FLG} = 0 ] ; then
 		echo -n "{ \"{#VTYPE}\" : \"${CUR_TYPE}\", \"{#VIPINFO}\" : \"${CUR_IP_INFO}\", \"{#RIPINFO}\" : \"${IP_INFO}\" },"
 	fi
-	
 	break
     done
     END_FLG=$(($END_FLG+1))
